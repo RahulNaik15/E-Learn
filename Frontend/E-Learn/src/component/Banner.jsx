@@ -1,5 +1,7 @@
 import React from 'react'
 import banner from "../../public/banner.svg"
+import { Link } from 'react-router-dom'
+
 const Banner = () => {
   return (
       <>
@@ -13,7 +15,10 @@ const Banner = () => {
                   <input type="email" placeholder="Enter your email to explore more" required className="w-full outline-none"/>
                   </label>
                   <div className="validator-hint hidden text-[#64748b]">Enter valid email address</div>
-                  <button className=" px-5 py-3 rounded-lg w-48 text-[white] font-bold bg-[#1974d2] hover:bg-[#0e39a9] mt-2">View Courses</button>
+                  <Link to='/course'>
+                    <button className=" px-5 py-3 rounded-lg w-48 text-[white] font-bold bg-[#1974d2] hover:bg-[#0e39a9] mt-2">View Courses</button>          
+                  </Link>
+                  
             </div>
             </div> 
             <div className='w-full md:w-1/2 order-1 flex justify-center'>
