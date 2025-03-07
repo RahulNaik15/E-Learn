@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import close from "../assets/cross.png";
+import { useForm } from "react-hook-form";
 
 const Login = ({ setShowLogin }) => {
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+
     const [currState, setCurrState] = useState("Login");
 
     return (
         <div className="fixed inset-0 z-10 bg-[#00000090] bg-opacity-20 backdrop-blur-md flex items-center justify-center">
-            <form className="w-[min(23vw,330px)] bg-white flex flex-col gap-6 p-6 rounded-md text-gray-500 text-sm animate-fadeIn">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-[min(23vw,330px)] bg-white flex flex-col gap-6 p-6 rounded-md text-gray-500 text-sm animate-fadeIn">
                 <div className="flex justify-between items-center text-black">
                     <h2 className='font-bold text-xl'>{currState}</h2>
                     <img
@@ -24,6 +29,7 @@ const Login = ({ setShowLogin }) => {
                             placeholder="Full Name"
                             required
                             className="outline-none border border-gray-300 p-2 rounded"
+                            {...register("fullname", { required: true })}
                         />
                     )}
                     <input
@@ -31,12 +37,14 @@ const Login = ({ setShowLogin }) => {
                         placeholder="Email"
                         required
                         className="outline-none border border-gray-300 p-2 rounded"
+                        {...register("email", { required: true })}
                     />
                     <input
                         type="password"
                         placeholder="Password"
                         required
                         className="outline-none border border-gray-300 p-2 rounded"
+                        {...register("password", { required: true })}
                     />
                 </div>
 
