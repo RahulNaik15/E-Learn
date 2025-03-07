@@ -4,10 +4,10 @@ import Course from '../component/Course'
 import Footer from '../component/Footer'
 
 
-const Courses = () => {
+const Courses = ({setShowLogin}) => {
   return (
       <>
-          <Navbar></Navbar>
+          <Navbar setShowLogin={setShowLogin} ></Navbar>
           <div className='min-h-screen'>
              <Course></Course> 
           </div>

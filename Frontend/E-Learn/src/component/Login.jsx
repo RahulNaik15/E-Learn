@@ -1,27 +1,82 @@
-import React from 'react'
+import React, { useState } from 'react';
+import close from "../assets/cross.png";
 
-const Login = () => {
-  return (
-    <div>
-        <dialog id="my_modal_3" className="modal">
-          <div className="modal-box flex flex-col items-center justify-center">
-           <form method="dialog">
-           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-           </form>
-             <h3 className="font-bold text-lg text-center mb-8">Login</h3>
-             <div className='flex flex-col gap-8 mb-7 w-sm'>
-                 <input className='px-5 py-2 border rounded-lg' type="email" placeholder='Email' required></input>
-                 <input className='px-5 py-2 border rounded-lg' type="password" placeholder='Password' required></input>     
-             </div>
-             <div>
-                  <button className='bg-[#1974d2] hover:bg-[#0e39a9] text-white px-5 w-sm py-2 border rounded-lg mb-4 cursor-pointer'>Login</button>
-                  <p>Create a new account ? <span className='text-[#1974d2] cursor-pointer'>Sign Up</span></p>
-                      
-             </div>
-          </div>
-       </dialog>  
-    </div>
-  )
-}
+const Login = ({ setShowLogin }) => {
+    const [currState, setCurrState] = useState("Login");
 
-export default Login
+    return (
+        <div className="fixed inset-0 z-10 bg-[#00000090] bg-opacity-20 backdrop-blur-md flex items-center justify-center">
+            <form className="w-[min(23vw,330px)] bg-white flex flex-col gap-6 p-6 rounded-md text-gray-500 text-sm animate-fadeIn">
+                <div className="flex justify-between items-center text-black">
+                    <h2 className='font-bold text-xl'>{currState}</h2>
+                    <img
+                        onClick={() => setShowLogin(false)}
+                        src={close}
+                        alt="Close"
+                        className="w-5 cursor-pointer"
+                    />
+                </div>
+
+                <div className="flex flex-col gap-5">
+                    {currState === "Login" ? null : (
+                        <input
+                            type="text"
+                            placeholder="Full Name"
+                            required
+                            className="outline-none border border-gray-300 p-2 rounded"
+                        />
+                    )}
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        required
+                        className="outline-none border border-gray-300 p-2 rounded"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        required
+                        className="outline-none border border-gray-300 p-2 rounded"
+                    />
+                </div>
+
+                <button className="border-none py-2 rounded bg-[#1974d2] hover:bg-[#0e39a9] text-white text-base cursor-pointer ">
+                    {currState === "Sign Up" ? "Create Account" : "Login"}
+                </button>
+
+              
+                <div className="flex items-start gap-2 -mt-3">
+                    <input type="checkbox" required className="mt-1" />
+                    <p>By continuing, I agree to the terms of use and privacy policy</p>
+                </div>
+
+                {/* Switch between Login & Sign Up */}
+                <p>
+                    {currState === "Login" ? (
+                        <>
+                            Create a new account?{" "}
+                            <span
+                                onClick={() => setCurrState("Sign Up")}
+                                className="text-[#1974d2] font-medium cursor-pointer"
+                            >
+                                Click Here
+                            </span>
+                        </>
+                    ) : (
+                        <>
+                            Already have an account?{" "}
+                            <span
+                                onClick={() => setCurrState("Login")}
+                                className="text-[#1974d2] font-medium cursor-pointer"
+                            >
+                                Login Here
+                            </span>
+                        </>
+                    )}
+                </p>
+            </form>
+        </div>
+    );
+};
+
+export default Login;

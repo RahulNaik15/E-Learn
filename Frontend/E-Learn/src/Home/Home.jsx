@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../component/Navbar'
 import Banner from '../component/Banner'
 import FreeCourse from '../component/FreeCourse'
 import Footer from '../component/Footer'
 
-const Home = () => {
+
+const Home = ({setShowLogin}) => {
+
+  
   return (
-      <>
-      <Navbar></Navbar>
+    <>
+      <Navbar setShowLogin={setShowLogin}></Navbar>
       <Banner></Banner>
       <FreeCourse></FreeCourse>
       <Footer></Footer>
