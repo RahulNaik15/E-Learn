@@ -55,7 +55,9 @@
         "title":"Master the art of Prompt Engineering enhance AI with precise prompts!",
         "price":1000,
         "category":"Paid",
-        "image":"/chatgpt.png"
+        "skills":["Excel Basics","Formulas and Functions","Data Cleaning","Conditional Formatting","Lookup Functions"],
+        "image":"/chatgpt.png",
+        "videoUrl":"https://www.youtube.com/embed/55NvZjUZIO8?si=-qK7DoRWgna7yre3"
     },
     {
         "id":7,
@@ -73,7 +75,9 @@
         "title":"Master Java Programming and build robust applications!",
         "price":1500,
         "category":"Paid",
-        "image":"/java.png"
+        "skills":["Excel Basics","Formulas and Functions","Data Cleaning","Conditional Formatting","Lookup Functions"],
+        "image":"/java.png",
+        "videoUrl":"https://www.youtube.com/embed/55NvZjUZIO8?si=-qK7DoRWgna7yre3"
     },
     {
         "id":9,
@@ -81,6 +85,8 @@
         "title":"Master Data Structures in C and optimize your coding skills!",
         "price":2000,
         "category":"Paid",
-        "image":"/dsa.jpg"
+        "skills":["Excel Basics","Formulas and Functions","Data Cleaning","Conditional Formatting","Lookup Functions"],
+        "image":"/dsa.jpg",
+        "videoUrl":"https://www.youtube.com/embed/55NvZjUZIO8?si=-qK7DoRWgna7yre3"
     }
 ]

@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Cards({item}) {
+function Cards({ item }) {
+  
+  
+
   return (
 <>
         <div className='mt-4 my-3 p-3'>
@@ -19,7 +22,7 @@ function Cards({item}) {
             <p className='text-base font-medium text-[#64748b]'>{item.title}</p>
        <div className="card-actions flex justify-between">
        <div className="badge badge-outline border cursor-pointer hover:bg-[#1974d2] hover:text-white hover:border-[#0e39a9] rounded-lg px-2 py-4 duration-200">₹ {item.price}</div>
-       <Link to={`/course/${item.id}`} className="badge badge-outline border cursor-pointer hover:bg-[#1974d2] hover:text-white hover:border-[#0e39a9] rounded-lg px-2 py-4 duration-200">View Course</Link>
+       <Link to={item.price > 0 ? `/paid-course/${item.id}` : `/course/${item.id}`}  className="badge badge-outline border cursor-pointer hover:bg-[#1974d2] hover:text-white hover:border-[#0e39a9] rounded-lg px-2 py-4 duration-200">View Course</Link>
        </div>
        </div>
        </div>  

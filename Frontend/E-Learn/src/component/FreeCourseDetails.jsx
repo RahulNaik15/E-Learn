@@ -39,22 +39,19 @@ const FreeCourseDetails = () => {
 
 
         <div className="flex flex-col gap-10 items-center justify-start pr-[10vw]">
-         <div>
-           <ul className="menu w-90 h-80 mt-40 rounded-2xl border border-[#EAECF0] bg-white shadow-[0px_12px_16px_-4px_rgba(16,24,40,0.08),0px_4px_6px_-2px_rgba(16,24,40,0.03)]">
-            <li>
-                <h2 className="menu-title text-xl text-black">Skills you will gain</h2>
-                <ul className="space-y-3 text-lg text-gray-600 dark:text-gray-400">
-                <li><a>{course.skills[0]}</a></li>
-                <li><a>{course.skills[1]}</a></li>
-                <li><a>{course.skills[2]}</a></li>
-                <li><a>{course.skills[3]}</a></li>
-                <li><a>{course.skills[4]}</a></li>
-                </ul>
-            </li>
-          </ul>
-         </div>
+         <div className="w-100 h-90 mt-40 border-1 border-gray-300 shadow-lg rounded-2xl  bg-white p-6 ">
+            <h1 className="text-2xl font-semibold text-gray-800 mb-4">Skills you will gain</h1>           
+            <ul className="space-y-6 text-gray-600 text-lg">
+                {course.skills.map((item,index)=>(
+                    <li key={index} className="flex items-center space-x-2">
+                    <span className="text-[#1974d2]">✔</span>
+                    <span className="text-[#196AE5] bg-[#E8F0FC] rounded-4xl border-2 border-[#196AE5] px-2  ">{item}</span>
+                    </li>
+                ))}          
+            </ul>
+          </div>
          <div className="">
-           <div className=" w-[23vw] text-center border cursor-pointer bg-[#1974d2] text-white hover:border-[#0e39a9] rounded-lg px-2 py-3 duration-200">
+           <div className=" w-[26vw] text-center border cursor-pointer bg-[#1974d2] text-white hover:border-[#0e39a9] rounded-lg px-2 py-3 duration-200">
            {course.price > 0 ? `Price: ₹${course.price}` : "₹ 0"}
            </div>
          </div>   
