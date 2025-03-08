@@ -67,7 +67,7 @@ const PaidCourseDetails = () => {
             {course.category}
           </h1>
           <h1 className="text-3xl font-bold mb-4">{course.name}</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">{course.title}</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400 font-medium w-[70%]">{course.title}</p>
           <img className="w-[30vw] h-[35vh] rounded" src={course.image} alt={course.name} />
 
           {isPaid ? (

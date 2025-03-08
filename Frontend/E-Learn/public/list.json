@@ -2,7 +2,7 @@
     {
         "id":1,
         "name":"Master Data Analytics Excel",
-        "title":"Unlock powerful data insights using Excel’s advanced analytics tools.",
+        "title":"Unlock powerful data insights using Excel’s advanced analytics tools  and automate tasks for productivity.",
         "price":0,
         "category":"Free",
         "skills":["Excel Basics","Formulas and Functions","Data Cleaning","Conditional Formatting","Lookup Functions"],
@@ -12,7 +12,7 @@
     {
         "id":2,
         "name":"Master Python Basics",
-        "title":"Learn Python fundamentals to kickstart your coding journey.",
+        "title":"Learn Python fundamentals to kickstart your coding journey and develop applications across various domains.",
         "price":0,
         "category":"Free",
         "skills":["Python Basics","Loops","OOP Concepts","Functions","Pattern Matching"],
@@ -22,7 +22,7 @@
     {
         "id":3,
         "name":"Generative AI",
-        "title":"Explore AI-powered creativity with Generative AI concepts.",
+        "title":"Explore AI-powered creativity with Generative AI and deploy AI models that create human-like content.",
         "price":0,
         "category":"Free",
         "skills":["Gen AI concepts","Prompt design","DChatgpt","Langchain","Prompt design"],
@@ -32,7 +32,7 @@
     {
         "id":4,
         "name":"SQL for Data Science",
-        "title":"Master SQL queries to analyze and manage data efficiently.",
+        "title":"Master SQL queries to analyze and manage data efficiently for data-driven decision-making.",
         "price":0,
         "category":"Free",
         "skills":["Data Analysis","SQL","SQL with Python","Hands on Queries","Clauses"],
@@ -42,7 +42,7 @@
     {
         "id":5,
         "name":"Microsoft Azure Application",
-        "title":"Build and deploy applications using Microsoft Azure services.",
+        "title":"This Microsoft Azure course provides a hands-on experience to manage scalable cloud solutions on Azure.",
         "price":0,
         "category":"Free",
         "skills":["Building chatbots in Azure","Building websites using Azure","Cloud Computing","Cloud Service Provider","What is Azure"],
@@ -52,17 +52,17 @@
     {
         "id":6,
         "name":"Prompt Engineering",
-        "title":"Master the art of Prompt Engineering enhance AI with precise prompts!",
+        "title":"Master the art of Prompt Engineering enhance AI with for optimal responses and enhanced model performance.",
         "price":1000,
         "category":"Paid",
-        "skills":["Excel Basics","Formulas and Functions","Data Cleaning","Conditional Formatting","Lookup Functions"],
+        "skills":["Introduction to Generative AI","Basics of Prompt Engineering","Advanced Prompt Strategies","Crafting effective prompts for LLMs","Prompt Optimization"],
         "image":"/chatgpt.png",
-        "videoUrl":"https://www.youtube.com/embed/55NvZjUZIO8?si=-qK7DoRWgna7yre3"
+        "videoUrl":"https://www.youtube.com/embed/5wf7DoJdpuc?si=nsoRv4UpcMuEzQjo"
     },
     {
         "id":7,
         "name":"UI/UX Beginners",
-        "title":"Learn design principles to create stunning user experiences.",
+        "title":"This UI/UX design course provides an immersive learning experience, allow to create intuitive, digital experiences.",
         "price":0,
         "category":"Free",
         "skills":["UX and UI","UX Tools","UI Tools","Wireframing","Prototyping"],
@@ -72,21 +72,51 @@
     {
         "id":8,
         "name":"Java Programming",
-        "title":"Master Java Programming and build robust applications!",
+        "title":"This course offers a comprehensive learning experience, to build robust and scalable applications.",
         "price":1500,
         "category":"Paid",
-        "skills":["Excel Basics","Formulas and Functions","Data Cleaning","Conditional Formatting","Lookup Functions"],
+        "skills":["Java Basics","OOPS Concepts","Arrays in Java","Advanced Java","Collection Framework"],
         "image":"/java.png",
-        "videoUrl":"https://www.youtube.com/embed/55NvZjUZIO8?si=-qK7DoRWgna7yre3"
+        "videoUrl":"https://www.youtube.com/embed/NGFh1tn2Up4?si=17ABP-87VRUetDmH"
     },
     {
         "id":9,
         "name":"Data Structure in C",
-        "title":"Master Data Structures in C and optimize your coding skills!",
+        "title":"This data structures course provides an in-depth learning experience with hands-on coding exercises",
         "price":2000,
         "category":"Paid",
-        "skills":["Excel Basics","Formulas and Functions","Data Cleaning","Conditional Formatting","Lookup Functions"],
+        "skills":["Arrays","Queue","Linked List","Stack","Graphs"],
         "image":"/dsa.jpg",
-        "videoUrl":"https://www.youtube.com/embed/55NvZjUZIO8?si=-qK7DoRWgna7yre3"
+        "videoUrl":"https://www.youtube.com/embed/MtVZAXepMPM?si=3VHw6p3qDtV2oqmj"
+    },
+    {
+        "id":10,
+        "name":"Ethical Hacking",
+        "title":"This ethical hacking course offers an immersive learning experience, skills to secure and protect digital systems.",
+        "price":3000,
+        "category":"Paid",
+        "skills":["Introduction to Ethical Hacking","Process flow for Ethical Hacking","Ethical Hacking Techniques","Domains under Ethical Hacking","bWAPP"],
+        "image":"/ethical.jpg",
+        "videoUrl":"https://www.youtube.com/embed/p475WJvAK6o?si=YFDVaQrZl4taU-xj"
+    },
+    {
+        "id":11,
+        "name":"Web Development",
+        "title":"This course offers a structured learning path with hands-on projects to strengthen skills.",
+        "price":3500,
+        "category":"Paid",
+        "skills":["HTML/CSS/JavaScript","Responsive Design","Front-End Frameworks ","Back-End Development","Databases"],
+        "image":"/web.jpeg",
+        "videoUrl":"https://www.youtube.com/embed/_qWVqFiX1CY?si=oxWWq7Qf1a0u-ZoM"
+    },
+    {
+        "id":12,
+        "name":"Artificial Intelligence",
+        "title":"This AI course offers an immersive learning experience with real-world projects, allow to master AI concepts.",
+        "price":4000,
+        "category":"Paid",
+        "skills":["Basics of Neural Networks","Basics of Deep Neural Networks","Basics of NLP","Basics of Computer Vision"],
+        "image":"/ai.jpg",
+        "videoUrl":"https://www.youtube.com/embed/JMUxmLyrhSk?si=fSO1OOSP-EtfcfgY"
     }
 ]
