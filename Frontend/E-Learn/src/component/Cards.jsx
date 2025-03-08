@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Cards({item}) {
   return (
@@ -18,7 +19,7 @@ function Cards({item}) {
             <p className='text-base font-medium text-[#64748b]'>{item.title}</p>
        <div className="card-actions flex justify-between">
        <div className="badge badge-outline border cursor-pointer hover:bg-[#1974d2] hover:text-white hover:border-[#0e39a9] rounded-lg px-2 py-4 duration-200">₹ {item.price}</div>
-       <div className="badge badge-outline border cursor-pointer hover:bg-[#1974d2] hover:text-white hover:border-[#0e39a9] rounded-lg px-2 py-4 duration-200">View Course</div>
+       <Link to={`/course/${item.id}`} className="badge badge-outline border cursor-pointer hover:bg-[#1974d2] hover:text-white hover:border-[#0e39a9] rounded-lg px-2 py-4 duration-200">View Course</Link>
        </div>
        </div>
        </div>  

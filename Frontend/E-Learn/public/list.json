@@ -5,7 +5,9 @@
         "title":"Unlock powerful data insights using Excel’s advanced analytics tools.",
         "price":0,
         "category":"Free",
-        "image":"/excel.jpg"
+        "skills":["Excel Basics","Formulas and Functions","Data Cleaning","Conditional Formatting","Lookup Functions"],
+        "image":"/excel.jpg",
+        "videoUrl":"https://www.youtube.com/embed/Vl0H-qTclOg?si=c_6M5N28JiukZw4i" 
     },
     {
         "id":2,
@@ -13,7 +15,9 @@
         "title":"Learn Python fundamentals to kickstart your coding journey.",
         "price":0,
         "category":"Free",
-        "image":"/python.jpg"
+        "skills":["Python Basics","Loops","OOP Concepts","Functions","Pattern Matching"],
+        "image":"/python.jpg",
+        "videoUrl":"https://www.youtube.com/embed/eWRfhZUzrAc?si=1gLwqnITd3eUsbLP"
     },
     {
         "id":3,
@@ -21,7 +25,9 @@
         "title":"Explore AI-powered creativity with Generative AI concepts.",
         "price":0,
         "category":"Free",
-        "image":"/image1.jpg"
+        "skills":["Gen AI concepts","Prompt design","DChatgpt","Langchain","Prompt design"],
+        "image":"/image1.jpg",
+        "videoUrl":"https://www.youtube.com/embed/rwF-X5STYks?si=5zF57ws37U4VY3g_" 
     },
     {
         "id":4,
@@ -29,7 +35,9 @@
         "title":"Master SQL queries to analyze and manage data efficiently.",
         "price":0,
         "category":"Free",
-        "image":"/sql.jpg"
+        "skills":["Data Analysis","SQL","SQL with Python","Hands on Queries","Clauses"],
+        "image":"/sql.jpg",
+        "videoUrl":"https://www.youtube.com/embed/TAHFF0hbAkE?si=i4ybHqUZV9rjfg9y"
     },
     {
         "id":5,
@@ -37,7 +45,9 @@
         "title":"Build and deploy applications using Microsoft Azure services.",
         "price":0,
         "category":"Free",
-        "image":"/azure.jpg"
+        "skills":["Building chatbots in Azure","Building websites using Azure","Cloud Computing","Cloud Service Provider","What is Azure"],
+        "image":"/azure.jpg",
+        "videoUrl":"https://www.youtube.com/embed/3Arj5zlUPG4?si=6VO7Fk6e9j3dOXq-"
     },
     {
         "id":6,
@@ -53,7 +63,9 @@
         "title":"Learn design principles to create stunning user experiences.",
         "price":0,
         "category":"Free",
-        "image":"/uiux.jpg"
+        "skills":["UX and UI","UX Tools","UI Tools","Wireframing","Prototyping"],
+        "image":"/uiux.jpg",
+        "videoUrl":"https://www.youtube.com/embed/55NvZjUZIO8?si=-qK7DoRWgna7yre3"
     },
     {
         "id":8,
