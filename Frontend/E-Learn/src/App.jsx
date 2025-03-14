@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import { BrowserRouter,Routes,Route, Navigate } from 'react-router-dom'
 import './App.css'
 import Home from './Home/Home'
 import Courses from './courses/Courses'
@@ -8,9 +8,16 @@ import ContactUs from './component/ContactUs'
 import AboutUs from './component/AboutUs'
 import FreeCourseDetails from './component/FreeCourseDetails'
 import PaidCourseDetails from './component/PaidCourseDetails'
+import { useAuth } from './context/AuthProvider'
+import ProtectedRoute from './component/ProtectedRoute'
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   
+  const { user: authUser } = useAuth(); // ✅ Fixed useAuth
+  console.log(authUser);
+
   const [showLogin, setShowLogin] = useState(false);
 
 
@@ -21,13 +28,28 @@ function App() {
 
         <BrowserRouter>
           {showLogin && <Login setShowLogin={setShowLogin} />}
+          <ToastContainer />
         <Routes>
           <Route path="/" element={<Home setShowLogin={setShowLogin}></Home>}></Route>
-          <Route path="/course" element={<Courses setShowLogin={setShowLogin}></Courses>}></Route>
-          <Route path="/course/:id" element={<FreeCourseDetails></FreeCourseDetails>} />  
+          <Route path="/course"
+            element={
+              <ProtectedRoute>
+                <Courses setShowLogin={setShowLogin} />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/course/:id" element={<FreeCourseDetails />}/>
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
-          <Route path="/paid-course/:id" element={<PaidCourseDetails />} />
-          <Route path="/about" element={<AboutUs></AboutUs>}></Route>    
+          <Route
+            path="/paid-course/:id"
+            element={
+              <ProtectedRoute>
+                <PaidCourseDetails />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/about" element={<AboutUs></AboutUs>}></Route> 
+          <Route path="/login" element={<Login></Login>}  ></Route>
         </Routes>
       </BrowserRouter>
       </div>

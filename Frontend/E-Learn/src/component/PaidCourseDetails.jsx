@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import list from "../../public/list.json";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { ToastContainer, toast } from 'react-toastify';
+import axios from "axios";
 
 const PaidCourseDetails = () => {
   const { id } = useParams();
-  const course = list.find((item) => item.id.toString() === id);
-
+  const [course, setCourse] = useState(null);
   const [showPayment, setShowPayment] = useState(false);
   const [isPaid, setIsPaid] = useState(false);
   const [name, setName] = useState("");
@@ -16,36 +15,60 @@ const PaidCourseDetails = () => {
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
 
+  useEffect(() => {
+    const fetchPaidCourse = async () => {
+      try {
+        const response = await axios.get(`http://localhost:4001/api/paidcourses/${id}`);
+        setCourse(response.data);
+
+        const paidCourses = JSON.parse(localStorage.getItem("paidCourses")) || [];
+        if (paidCourses.includes(id)) {
+        setIsPaid(true);
+      }
+      } catch (error) {
+        console.error("Error fetching course details:", error);
+      } 
+    };
+
+    fetchPaidCourse();
+  }, [id]);
+
   const handlePaymentSuccess = () => {
     if (!name || !cardNumber || !expiryDate || !cvv) {
-      toast.error("Please fill all payment details.", {
+      toast.error("Invalid Data", {
       });
       return;
     }
 
     if (cardNumber.length !== 16 || isNaN(cardNumber)) {
-      toast.error("Please enter a valid 16-digit card number.", {
+      toast.error("Invalid Data", {
       });
       return;
     }
 
     if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
-      toast.error("Please enter a valid expiry date (MM/YY).", {
+      toast.error("Invalid Data", {
       });
       return;
     }
 
     if (cvv.length !== 3 || isNaN(cvv)) {
-      toast.error("Please enter a valid 3-digit CVV.", {
+      toast.error("Invalid Data", {
       });
       return;
     }
 
     setTimeout(() => {
-      toast.success("Payment Successful! You now have access to the course.", {
+      toast.success("Payment Successful!", {
       });
       setIsPaid(true);
       setShowPayment(false);
+
+      const paidCourses = JSON.parse(localStorage.getItem("paidCourses")) || [];
+        if (!paidCourses.includes(id)) {
+           paidCourses.push(id);
+           localStorage.setItem("paidCourses", JSON.stringify(paidCourses));
+        }
     }, 2000);
   };
 

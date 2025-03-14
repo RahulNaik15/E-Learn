@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import list from "../../public/list.json"; 
+import axios from "axios";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 const FreeCourseDetails = () => {
   const { id } = useParams();  // Get course ID from URL
-  const course = list.find((item) => item.id.toString() === id); // Find course by ID
+  const [course, setCourse] = useState(null);
+  
+  useEffect(() => {
+    const fetchCourse = async () => {
+      try {
+        const res = await axios.get("http://localhost:4001/course");
+        const foundCourse = res.data.find((item) => item.id === Number(id));
+        setCourse(foundCourse);
+      } catch (error) {
+        console.error("Error fetching course details:", error);
+      }
+    };
+
+    fetchCourse();
+  }, [id]);
+
 
   if (!course) {
     return <h2 className="text-center text-red-500 text-2xl">Course Not Found</h2>;
@@ -42,7 +57,7 @@ const FreeCourseDetails = () => {
          <div className="w-100 h-90 mt-40 border-1 border-gray-300 shadow-lg rounded-2xl  bg-white p-6 ">
             <h1 className="text-2xl font-semibold text-gray-800 mb-4">Skills you will gain</h1>           
             <ul className="space-y-6 text-gray-600 text-lg">
-                {course.skills.map((item,index)=>(
+                {course.skills?.map((item,index)=>(
                     <li key={index} className="flex items-center space-x-2">
                     <span className="text-[#1974d2]">✔</span>
                     <span className="text-[#196AE5] bg-[#E8F0FC] rounded-4xl border-2 border-[#196AE5] px-2  ">{item}</span>

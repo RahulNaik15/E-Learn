@@ -1,15 +1,62 @@
 import React, { useState } from 'react';
 import close from "../assets/cross.png";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useAuth } from '../context/AuthProvider';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = ({ setShowLogin }) => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
-
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const [currState, setCurrState] = useState("Login");
+    const { login } = useAuth();
+    const navigate = useNavigate();
+
+    const onSubmit = async (data) => {
+        const userInfo = {
+            fullname: data.fullname,
+            email: data.email,
+            password: data.password,     
+        }
+
+        try {
+            if (currState === "Sign Up") {
+                const res = await axios.post("http://localhost:4001/user/signup", userInfo)
+                console.log(res.data);
+                toast.success("Signup Successfully", {
+                    position: "top-center",
+                });
+            }
+            else {
+                const res = await axios.post("http://localhost:4001/user/login", {
+                    email: data.email,
+                    password:data.password,
+                }) 
+                console.log(res.data);
+                toast.success("Login Successful!", {
+                    position: "top-center",
+                });
+                login(res.data.user); // Store user in context
+                navigate("/course"); // Navigate to the course page
+            }
+            localStorage.setItem("Users", JSON.stringify(userInfo));
+            setShowLogin(false);
+        }
+        catch (err) {
+           if (err.response) {
+            console.error(err);
+               toast.error(err.response.data.message, {
+               position: "top-center",
+            }); 
+        }
+    }   
+  }
+
+    
 
     return (
+        <>  
         <div className="fixed inset-0 z-10 bg-[#00000090] bg-opacity-20 backdrop-blur-md flex items-center justify-center">
         <form onSubmit={handleSubmit(onSubmit)} className="w-[min(23vw,330px)] bg-white flex flex-col gap-6 p-6 rounded-md text-gray-500 text-sm animate-fadeIn">
                 <div className="flex justify-between items-center text-black">
@@ -84,6 +131,7 @@ const Login = ({ setShowLogin }) => {
                 </p>
             </form>
         </div>
+    </>
     );
 };
 

@@ -55,7 +55,7 @@
         "title":"Master the art of Prompt Engineering enhance AI with for optimal responses and enhanced model performance.",
         "price":1000,
         "category":"Paid",
-        "skills":["Introduction to Generative AI","Basics of Prompt Engineering","Advanced Prompt Strategies","Crafting effective prompts for LLMs","Prompt Optimization"],
+        "skills":["Introduction to Generative AI","Basics of Prompt Engineering","Advanced Prompt Strategies","Crafting prompts for LLMs","Prompt Optimization"],
         "image":"/chatgpt.png",
         "videoUrl":"https://www.youtube.com/embed/5wf7DoJdpuc?si=nsoRv4UpcMuEzQjo"
     },
